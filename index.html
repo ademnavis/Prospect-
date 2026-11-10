@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="description" content="PROSPECT - Modern Football Scouting Notebook">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PROSPECT">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.svg">
+    <title>PROSPECT - Football Scouting Notebook</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2v20M2 12h20"/>
+                    </svg>
+                    <span class="logo-text">PROSPECT</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-section="dashboard">
+                    <a href="#dashboard" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-section="players">
+                    <a href="#players" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="5"/>
+                            <path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/>
+                        </svg>
+                        <span>Players</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-section="scouting">
+                    <a href="#scouting" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        <span>Scouting</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-section="notebook">
+                    <a href="#notebook" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        <span>Notebook</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-section="matches">
+                    <a href="#matches" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span>Matches</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-section="analysis">
+                    <a href="#analysis" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                            <polyline points="2 17 12 22 22 17"/>
+                            <polyline points="2 12 12 17 22 12"/>
+                        </svg>
+                        <span>Analysis</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-section="settings">
+                    <a href="#settings" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="main-content">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                    <div class="breadcrumb">
+                        <span id="current-section">Dashboard</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="search-box">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        <input type="text" id="global-search" placeholder="Search..." autocomplete="off">
+                    </div>
+                    <button id="add-new" class="btn btn-primary btn-sm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                        <span>New</span>
+                    </button>
+                </div>
+            </header>
+
+            <div id="section-content" class="section-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="section active">
+                    <div class="section-header">
+                        <h1>Dashboard</h1>
+                        <p class="section-subtitle">Overview of your scouting activities</p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon players">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="8" r="5"/>
+                                    <path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="total-players">0</span>
+                                <span class="stat-label">Players Scouted</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon reports">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="total-reports">0</span>
+                                <span class="stat-label">Scouting Reports</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon matches">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="total-matches">0</span>
+                                <span class="stat-label">Matches Observed</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon notes">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="total-notes">0</span>
+                                <span class="stat-label">Notebook Entries</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="card recent-activity">
+                            <div class="card-header">
+                                <h2>Recent Activity</h2>
+                            </div>
+                            <div class="card-body">
+                                <div id="recent-activity-list" class="activity-list"></div>
+                            </div>
+                        </div>
+                        <div class="card recently-viewed">
+                            <div class="card-header">
+                                <h2>Recently Viewed Players</h2>
+                            </div>
+                            <div class="card-body">
+                                <div id="recently-viewed-list" class="player-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Players Section -->
+                <section id="players-section" class="section">
+                    <div class="section-header">
+                        <h1>Players</h1>
+                        <p class="section-subtitle">Manage player profiles and scouting data</p>
+                    </div>
+                    <div class="players-toolbar">
+                        <div class="filter-bar">
+                            <select id="position-filter" class="filter-select">
+                                <option value="">All Positions</option>
+                                <option value="GK">Goalkeeper</option>
+                                <option value="CB">Centre Back</option>
+                                <option value="FB">Full Back</option>
+                                <option value="WB">Wing Back</option>
+                                <option value="DM">Defensive Midfielder</option>
+                                <option value="CM">Central Midfielder</option>
+                                <option value="AM">Attacking Midfielder</option>
+                                <option value="W">Winger</option>
+                                <option value="ST">Striker</option>
+                            </select>
+                            <input type="text" id="player-search" class="search-input" placeholder="Search players...">
+                        </div>
+                        <button id="add-player-btn" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            <span>Add Player</span>
+                        </button>
+                    </div>
+                    <div class="players-grid" id="players-grid"></div>
+                </section>
+
+                <!-- Scouting Section -->
+                <section id="scouting-section" class="section">
+                    <div class="section-header">
+                        <h1>Scouting Reports</h1>
+                        <p class="section-subtitle">Create and manage detailed player assessments</p>
+                    </div>
+                    <div class="scouting-toolbar">
+                        <button id="add-report-btn" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            <span>New Report</span>
+                        </button>
+                    </div>
+                    <div class="reports-list" id="reports-list"></div>
+                </section>
+
+                <!-- Notebook Section -->
+                <section id="notebook-section" class="section">
+                    <div class="section-header">
+                        <h1>Notebook</h1>
+                        <p class="section-subtitle">Free-form notes and observations</p>
+                    </div>
+                    <div class="notebook-toolbar">
+                        <button id="add-note-btn" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            <span>New Note</span>
+                        </button>
+                    </div>
+                    <div class="notes-grid" id="notes-grid"></div>
+                </section>
+
+                <!-- Matches Section -->
+                <section id="matches-section" class="section">
+                    <div class="section-header">
+                        <h1>Match Observations</h1>
+                        <p class="section-subtitle">Record and review match observations</p>
+                    </div>
+                    <div class="matches-toolbar">
+                        <button id="add-match-btn" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            <span>New Match</span>
+                        </button>
+                    </div>
+                    <div class="matches-list" id="matches-list"></div>
+                </section>
+
+                <!-- Analysis Section -->
+                <section id="analysis-section" class="section">
+                    <div class="section-header">
+                        <h1>Player Analysis</h1>
+                        <p class="section-subtitle">Deep insights and assessments</p>
+                    </div>
+                    <div class="analysis-grid" id="analysis-grid"></div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings-section" class="section">
+                    <div class="section-header">
+                        <h1>Settings</h1>
+                        <p class="section-subtitle">Application preferences and data management</p>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <div class="settings-header">
+                                <h2>Appearance</h2>
+                            </div>
+                            <div class="settings-body">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <span class="setting-label">Theme</span>
+                                        <span class="setting-description">Choose between light and dark mode</span>
+                                    </div>
+                                    <div class="setting-control">
+                                        <select id="theme-select" class="setting-select">
+                                            <option value="system">System</option>
+                                            <option value="light">Light</option>
+                                            <option value="dark">Dark</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <div class="settings-header">
+                                <h2>Data Management</h2>
+                            </div>
+                            <div class="settings-body">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <span class="setting-label">Export Data</span>
+                                        <span class="setting-description">Export all data to JSON</span>
+                                    </div>
+                                    <div class="setting-control">
+                                        <button id="export-data-btn" class="btn btn-secondary btn-sm">Export JSON</button>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <span class="setting-label">Import Data</span>
+                                        <span class="setting-description">Import data from JSON backup</span>
+                                    </div>
+                                    <div class="setting-control">
+                                        <button id="import-data-btn" class="btn btn-secondary btn-sm">Import JSON</button>
+                                        <input type="file" id="import-file" accept=".json" style="display: none;">
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <span class="setting-label">Clear All Data</span>
+                                        <span class="setting-description">Permanently delete all stored data</span>
+                                    </div>
+                                    <div class="setting-control">
+                                        <button id="clear-data-btn" class="btn btn-danger btn-sm">Clear Data</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <div class="settings-header">
+                                <h2>About</h2>
+                            </div>
+                            <div class="settings-body">
+                                <div class="about-info">
+                                    <div class="about-logo">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M12 2v20M2 12h20"/>
+                                        </svg>
+                                    </div>
+                                    <div class="about-details">
+                                        <h3>PROSPECT</h3>
+                                        <p>Version 1.0.0</p>
+                                        <p class="about-description">A modern football scouting notebook for recording, organising, analysing and managing football scouting information.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <div class="settings-header">
+                                <h2>PWA Information</h2>
+                            </div>
+                            <div class="settings-body">
+                                <div class="pwa-info">
+                                    <div class="pwa-status" id="pwa-status">
+                                        <span class="pwa-icon">📱</span>
+                                        <span class="pwa-text" id="pwa-text">Not installed</span>
+                                    </div>
+                                    <p class="pwa-description">This application can be installed as a Progressive Web App for offline use.</p>
+                                    <button id="install-btn" class="btn btn-primary btn-sm" style="display: none;">Install App</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals will be created dynamically via JavaScript -->
+    <div id="modal-container"></div>
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JavaScript -->
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Register Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

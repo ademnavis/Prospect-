@@ -1,0 +1,264 @@
+/* PROSPECT - Football Scouting Notebook */
+/* Theme Styles */
+
+/* Theme Toggle */
+[data-theme="dark"] .theme-toggle .sun {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle .moon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="light"] .theme-toggle .sun,
+:root:not([data-theme]) .theme-toggle .sun {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="light"] .theme-toggle .moon,
+:root:not([data-theme]) .theme-toggle .moon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+    /* Background colors */
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --bg-tertiary: #334155;
+    
+    /* Text colors */
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-tertiary: #94A3B8;
+    
+    /* Border colors */
+    --border: #334155;
+    --border-dark: #475569;
+    
+    /* Shadows */
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Theme (Default) */
+[data-theme="light"],
+:root:not([data-theme]) {
+    /* Background colors */
+    --bg-primary: #F9FAFB;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F3F4F6;
+    
+    /* Text colors */
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --text-tertiary: #9CA3AF;
+    
+    /* Border colors */
+    --border: #E5E7EB;
+    --border-dark: #D1D5DB;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .glass,
+:root:not([data-theme]) .glass {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Card Glass Effect */
+.card.glass {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .card.glass {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* Theme Colors for Different Sections */
+
+/* Technical Attributes Theme */
+.technical-section {
+    border-top: 4px solid var(--primary);
+}
+
+.technical-section .form-section h3 {
+    color: var(--primary);
+}
+
+.technical-section .rating-select {
+    border-color: var(--primary-light);
+}
+
+/* Tactical Attributes Theme */
+.tactical-section .form-section h3 {
+    color: var(--info);
+}
+
+.tactical-section .rating-select {
+    border-color: var(--info);
+}
+
+/* Physical Attributes Theme */
+.physical-section .form-section h3 {
+    color: var(--success);
+}
+
+.physical-section .rating-select {
+    border-color: var(--success);
+}
+
+/* Mental Attributes Theme */
+.mental-section .form-section h3 {
+    color: var(--warning);
+}
+
+.mental-section .rating-select {
+    border-color: var(--warning);
+}
+
+/* Position Colors */
+.position-gk { background: #EF4444; color: white; }
+.position-cb { background: #3B82F6; color: white; }
+.position-fb { background: #8B5CF6; color: white; }
+.position-wb { background: #EC4899; color: white; }
+.position-dm { background: #F59E0B; color: white; }
+.position-cm { background: #10B981; color: white; }
+.position-am { background: #06B6D4; color: white; }
+.position-w { background: #84CC16; color: white; }
+.position-st { background: #EA580C; color: white; }
+.position-cf { background: #7C3AED; color: white; }
+
+/* Rating Colors */
+.rating-1 { color: #EF4444; }
+.rating-2 { color: #F97316; }
+.rating-3 { color: #F59E0B; }
+.rating-4 { color: #10B981; }
+.rating-5 { color: #22C55E; }
+
+/* Status Colors */
+.status-sign { background: #22C55E; color: white; }
+.status-strong { background: #10B981; color: white; }
+.status-recommend { background: #3B82F6; color: white; }
+.status-consider { background: #F59E0B; color: white; }
+.status-not { background: #EF4444; color: white; }
+
+/* Gradient Backgrounds */
+.gradient-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.gradient-success {
+    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+}
+
+.gradient-warning {
+    background: linear-gradient(135deg, var(--warning) 0%, #D97706 100%);
+}
+
+.gradient-danger {
+    background: linear-gradient(135deg, var(--danger) 0%, #DC2626 100%);
+}
+
+/* Theme-Specific Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--border);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* Focus Styles */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="dark"] ::selection {
+    background: var(--primary-light);
+    color: var(--bg-secondary);
+}
+
+/* Print Styles */
+@media print {
+    .sidebar,
+    .top-bar,
+    .modal,
+    .toast-container,
+    .btn,
+    .filter-bar {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .section-content {
+        padding: 0;
+    }
+    
+    .card,
+    .player-card,
+    .report-card,
+    .note-card,
+    .match-card {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}

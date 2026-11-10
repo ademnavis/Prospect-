@@ -1,0 +1,545 @@
+/* PROSPECT - Football Scouting Notebook */
+/* Responsive Styles */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .players-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .notes-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .reports-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .matches-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .analysis-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .settings-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (max-width: 1399px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .players-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .notes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .reports-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .matches-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .search-box input {
+        width: 150px;
+    }
+    
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .reports-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .matches-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .attributes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-width: 700px;
+    }
+    
+    .modal-xl {
+        max-width: 900px;
+    }
+    
+    .modal-lg {
+        max-width: 800px;
+    }
+}
+
+/* Mobile Landscape (480px - 767px) */
+@media (max-width: 767px) and (orientation: landscape) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Portrait (< 768px) */
+@media (max-width: 767px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .top-bar {
+        padding: 0 1rem;
+    }
+    
+    .top-bar-right {
+        gap: 0.5rem;
+    }
+    
+    .search-box {
+        display: none;
+    }
+    
+    .add-new span {
+        display: none;
+    }
+    
+    .add-new svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .section-content {
+        padding: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .stat-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .players-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-bar {
+        flex-direction: column;
+    }
+    
+    .filter-select,
+    .search-input {
+        width: 100%;
+    }
+    
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .player-card {
+        padding: 1rem;
+    }
+    
+    .player-card-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .player-card-avatar {
+        width: 64px;
+        height: 64px;
+        font-size: 1.5rem;
+    }
+    
+    .player-card-details {
+        justify-content: center;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reports-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .matches-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .attributes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .strengths-weaknesses {
+        grid-template-columns: 1fr;
+    }
+    
+    .strengths-column {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-right: 0;
+        padding-bottom: 1rem;
+    }
+    
+    .modal-content {
+        width: calc(100% - 2rem);
+        max-width: 100%;
+        max-height: 95vh;
+        margin: 1rem;
+    }
+    
+    .modal-xl,
+    .modal-lg,
+    .modal-sm {
+        max-width: 100%;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    .modal-header,
+    .modal-footer {
+        padding: 1rem;
+    }
+    
+    .toast-container {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+    
+    .toast {
+        width: 100%;
+    }
+    
+    .toast-message {
+        flex: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .pitch-container {
+        overflow-x: auto;
+    }
+    
+    .pitch-canvas {
+        min-width: 300px;
+    }
+    
+    /* Touch-friendly sizes */
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+    
+    .btn-sm {
+        padding: 0.625rem 1rem;
+    }
+    
+    input,
+    select,
+    textarea {
+        padding: 0.75rem;
+        font-size: 0.9375rem;
+    }
+    
+    .nav-link {
+        padding: 0.875rem 1rem;
+    }
+    
+    .nav-icon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .logo-text {
+        font-size: 1.125rem;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 479px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .stat-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .stat-value {
+        font-size: 1.75rem;
+    }
+    
+    .filter-select,
+    .search-input {
+        font-size: 0.875rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.875rem;
+    }
+    
+    .dropdown-menu {
+        min-width: 160px;
+        right: -16px;
+    }
+    
+    .about-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-logo {
+        margin: 0 auto;
+    }
+    
+    .pwa-status {
+        flex-direction: column;
+    }
+    
+    .pwa-icon {
+        font-size: 1.5rem;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --border: #000;
+        --border-dark: #000;
+    }
+    
+    [data-theme="dark"] {
+        --border: #fff;
+        --border-dark: #fff;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .sidebar,
+    .top-bar,
+    .modal-overlay,
+    .modal-content,
+    .toast-container,
+    .btn,
+    .filter-bar,
+    .search-box,
+    .add-new,
+    .theme-toggle {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .section-content {
+        padding: 0;
+    }
+    
+    .section {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+    
+    .card,
+    .player-card,
+    .report-card,
+    .note-card,
+    .match-card,
+    .settings-card {
+        border: 1px solid #ccc;
+        break-inside: avoid;
+        box-shadow: none;
+    }
+    
+    .stat-card {
+        background: white;
+        border: 1px solid #ccc;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+}
+
+/* Dark Mode Print */
+@media print and (prefers-color-scheme: dark) {
+    .card,
+    .player-card,
+    .report-card,
+    .note-card,
+    .match-card,
+    .settings-card,
+    .stat-card {
+        background: #1E293B;
+        border-color: #334155;
+        color: #F8FAFC;
+    }
+}
